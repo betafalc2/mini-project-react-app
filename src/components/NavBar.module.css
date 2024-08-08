@@ -1,0 +1,17 @@
+.navbar{
+    background-color:rgb(124, 222, 190);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
