@@ -1,15 +1,15 @@
 import './Sidebar.module.css';
-import {Link} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 
 function SideBar(){
     return(
         <div className="sidebar">
             <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink to="/about">About</NavLink>
         </li>
       </ul>
         </div>
