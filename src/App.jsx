@@ -4,7 +4,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Footer from './components/Footer'
 
-import {Router, Route, Routes, Link} from 'react-router-dom';
+import {Route, Routes, Link} from 'react-router-dom';
 
 import './App.css'
 
@@ -17,11 +17,12 @@ function App() {
 
     <NavBar/>
 
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+
     <SideBar/>
-
-    <Home/>
-
-    <About/>
 
     <Footer/>
 

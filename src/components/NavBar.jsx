@@ -7,8 +7,6 @@ function NavBar() {
                 <span>My App</span>
             </div>
 
-            <NavLink to="/">Home |</NavLink>
-            <NavLink to="/about">About</NavLink>
         </nav>
     )
 }
