@@ -5,6 +5,8 @@ import Home from './components/Home'
 import About from './components/About'
 import Footer from './components/Footer'
 import RecipeMenu from './components/RecipeMenu'
+import PageNotFound from './components/PageNotFound'
+import CreateARecipe from "./components/CreateARecipe";
 
 
 import { Route, Routes, Link } from 'react-router-dom';
@@ -26,9 +28,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/recipe-menu" element={<RecipeMenu />}/>
-        <Route path="/*" element={"Page not found, sorry"}/>
+        <Route path="/create-a-recipe" element={<CreateARecipe/>}/>
+        <Route path="/*" element={<PageNotFound/>}/>
       </Routes>
       
+      <CreateARecipe recipeToDisplay={props.recipesToDisplay}/>
+      <RecipeMenu/>
 
       <Footer />
 

@@ -14,9 +14,13 @@ function SideBar(){
         <li>
           <NavLink to="/recipe-menu">My Recipe List</NavLink>
         </li>
+        <li>
+          <NavLink to="/create-a-recipe">Create a Recipe</NavLink>
+        </li>
       </ul>
         </div>
     )
 }
 
 export default SideBar;
+

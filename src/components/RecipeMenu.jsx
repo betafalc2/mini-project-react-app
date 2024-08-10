@@ -38,11 +38,13 @@ function RecipeMenu() {
     };
 
     return (
-        <section className="recipe-list">
+        <section className="recipe-list" >
 
-            <h1 className="recipes-title">List of Recipes</h1>
+        <CreateARecipe/>
 
-            <h2>Number of Recipes: {recipesToDisplay.length}</h2>
+            <h1 className="recipes-title">List of My Recipes</h1>
+
+            <h2>Recipes: {recipesToDisplay.length}</h2>
 
             {recipesToDisplay.map((recipeDetails) => (
 
@@ -60,6 +62,7 @@ function RecipeMenu() {
                         </button>
 
                         <button onClick={() => deleteRecipe(recipeDetails.id)}>Delete</button>
+                        
                     </div>
                 </div>
             ))}
