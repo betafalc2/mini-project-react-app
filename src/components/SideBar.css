@@ -1,9 +1,9 @@
-.sidebar{
-    width: 200px;
-    height: 100vh;
+.sidebar {
+    width: 20vw;
+    height: 20vh;
     background-color: antiquewhite;
     padding: 1rem;
-    position: fixed;
+    position:relative;
 }
 
 .sidebar ul{

@@ -39,19 +39,26 @@ function RecipeMenu() {
 
     return (
         <section className="recipe-list">
+
             <h1 className="recipes-title">List of Recipes</h1>
+
             <h2>Number of Recipes: {recipesToDisplay.length}</h2>
+
             {recipesToDisplay.map((recipeDetails) => (
+
                 <div key={recipeDetails.id} className="recipe-item">
                     <img src={recipeDetails.image} alt={recipeDetails.name} />
                     <div>
+
                         <h3>Name: {recipeDetails.name}</h3>
                         <p>Calories: {recipeDetails.calories}</p>
                         <p>Serving: {recipeDetails.servings}</p>
+
                         <p>Status: {cookedStatus[recipeDetails.id] ? "Cooked" : "Not Cooked"}</p>
                         <button onClick={() => toggleCookedStatus(recipeDetails.id)}>
                             {cookedStatus[recipeDetails.id] ? "Mark as Not Cooked" : "Mark as Cooked"}
                         </button>
+
                         <button onClick={() => deleteRecipe(recipeDetails.id)}>Delete</button>
                     </div>
                 </div>

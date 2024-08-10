@@ -16,18 +16,16 @@ function App() {
 
   return (
     <>
-
-      <NavBar />
+      <div>
+      <NavBar /> <SideBar />
+      </div>
+      
       
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/recipe-menu" element={<RecipeMenu />}/>
       </Routes>
-
-      <SideBar />
-      <div>
-      <RecipeMenu />
-      </div>
       
 
       <Footer />

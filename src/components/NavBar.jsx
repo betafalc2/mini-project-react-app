@@ -1,10 +1,10 @@
-import './Navbar.module.css';
+import './Navbar.css';
 
 function NavBar() {
     return (
         <nav className="navbar">
             <div className="logo">
-                <span>My App</span>
+                <span>Dish Diary</span>
             </div>
 
         </nav>

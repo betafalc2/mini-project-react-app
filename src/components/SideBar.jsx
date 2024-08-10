@@ -1,5 +1,5 @@
-import './Sidebar.module.css';
-import {NavLink, Link} from 'react-router-dom';
+import './Sidebar.css';
+import {NavLink} from 'react-router-dom';
 
 function SideBar(){
     return(
@@ -10,6 +10,9 @@ function SideBar(){
         </li>
         <li>
           <NavLink to="/about">About</NavLink>
+        </li>
+        <li>
+          <NavLink to="/recipe-menu">My Recipe List</NavLink>
         </li>
       </ul>
         </div>
