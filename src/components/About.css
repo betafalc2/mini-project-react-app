@@ -1,0 +1,12 @@
+.content {
+    max-width: 20vw; /* Set a maximum width for readability */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 20px; /* Add padding around the content */
+    line-height: 1.6; /* Improve line spacing for readability */
+}
+
+/* Ensure that the paragraph text wraps properly */
+.content p {
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word; /* Break long words to prevent overflow */
+}

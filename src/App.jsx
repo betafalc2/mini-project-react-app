@@ -6,6 +6,7 @@ import About from './components/About'
 import Footer from './components/Footer'
 import RecipeMenu from './components/RecipeMenu'
 
+
 import { Route, Routes, Link } from 'react-router-dom';
 
 import './App.css'
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/recipe-menu" element={<RecipeMenu />}/>
+        <Route path="/*" element={"Page not found, sorry"}/>
       </Routes>
       
 

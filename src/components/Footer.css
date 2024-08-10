@@ -1,14 +1,30 @@
-.footer{
-    background-color: azure;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* Footer.css */
+
+/* Styles for the footer */
+.footer {
+    background-color: #ebb2b2; /* Light gray background */
+    padding: 20px; /* Add padding around the footer */
+    text-align: center; /* Center text alignment */
+    border-top: 1px solid #ddd; /* Light border on top */
 }
 
-.footer a{
-    color: beige;
-    text-decoration: none;
+.footer-content {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center content horizontally */
+}
+
+/* Styles for the social links */
+.social-links {
+    margin-top: 10px; /* Margin above social links */
+}
+
+.social-links a {
+    margin: 0 10px; /* Horizontal spacing between social links */
+    color: #333; /* Dark color for text */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold text for links */
+}
+
+.social-links a:hover {
+    color: #007bff; /* Change color on hover */
 }
