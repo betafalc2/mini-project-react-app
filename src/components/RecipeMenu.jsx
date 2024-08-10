@@ -1,52 +1,64 @@
-import recipes from "../data/database.json"
+import React from "react";
+import recipes from "../data/database.json";
 import { useState } from "react";
-import './RecipeMenu.module.css';
+import './RecipeMenu.css';
 
 function RecipeMenu() {
-
     const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
 
+    // Estado para controlar o status de cozimento de cada receita
+    const [cookedStatus, setCookedStatus] = useState(
+        recipes.reduce((acc, recipe) => {
+            acc[recipe.id] = false; // Inicializa todas como "Not Cooked"
+            return acc;
+        }, {})
+    );
 
-     
-        const deleteRecipe = (recipeId) => {
-            const newRecipeList = recipesToDisplay.filter((element) => {
-                return recipeId !== element.id
-            });
-            setRecipesToDisplay(newRecipeList);
-        };
+    // Função para deletar uma receita
+    const deleteRecipe = (recipeId) => {
+        const newRecipeList = recipesToDisplay.filter((element) => {
+            return recipeId !== element.id;
+        });
+        setRecipesToDisplay(newRecipeList);
 
-        return (
+        // Também remover o status de cozimento ao deletar
+        setCookedStatus((prevState) => {
+            const newState = { ...prevState };
+            delete newState[recipeId];
+            return newState;
+        });
+    };
 
+    // Função para alternar o status de cozimento
+    const toggleCookedStatus = (recipeId) => {
+        setCookedStatus((prevState) => ({
+            ...prevState,
+            [recipeId]: !prevState[recipeId],
+        }));
+    };
 
-            <section className="RecipeList">
+    return (
+        <section className="recipe-list">
+            <h1 className="recipes-title">List of Recipes</h1>
+            <h2>Number of Recipes: {recipesToDisplay.length}</h2>
+            {recipesToDisplay.map((recipeDetails) => (
+                <div key={recipeDetails.id} className="recipe-item">
+                    <img src={recipeDetails.image} alt={recipeDetails.name} />
+                    <div>
+                        <h3>Name: {recipeDetails.name}</h3>
+                        <p>Calories: {recipeDetails.calories}</p>
+                        <p>Serving: {recipeDetails.servings}</p>
+                        <p>Status: {cookedStatus[recipeDetails.id] ? "Cooked" : "Not Cooked"}</p>
+                        <button onClick={() => toggleCookedStatus(recipeDetails.id)}>
+                            {cookedStatus[recipeDetails.id] ? "Mark as Not Cooked" : "Mark as Cooked"}
+                        </button>
+                        <button onClick={() => deleteRecipe(recipeDetails.id)}>Delete</button>
+                    </div>
+                </div>
+            ))}
+        </section>
+    );
 
-                <h1>List of Recipes</h1>
-                <h2>Number of Recipes: {recipesToDisplay.length}</h2>
+}
 
-                {recipesToDisplay.map((recipeDetails) => {
-                    return (
-                        <div key={recipesToDisplay.id} className="recipe-item">
-                            <h3>Name: {recipeDetails.name}</h3>
-                            <img src={recipeDetails.image} alt="recipe" />
-                            <p>Calories: {recipeDetails.calories} </p>
-                            <p>Serving: {recipeDetails.servings} </p>
-                            <button onClick={() => deleteRecipe(recipeDetails.id)}>Delete</button>
-                           
-                        </div>
-                    )
-
-                })
-                }
-
-
-
-            </section>
-
-
-
-
-        )
-
-    }
-
-    export default RecipeMenu;
+export default RecipeMenu;

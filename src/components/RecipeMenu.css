@@ -1,4 +1,6 @@
-.recipes-title{
+/* RecipeMenu.module.css */
+
+.recipes-title {
     font-size: 2rem;
     color: #536001;
     text-align: center;
@@ -13,27 +15,27 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-  }
-  
-  .recipe-item img {
+}
+
+.recipe-item img {
     width: 120px;
     height: 120px;
     margin-right: 20px;
     border-radius: 8px;
-  }
+}
 
-  .recipe-item h3 {
+.recipe-item h3 {
     margin: 0;
     font-size: 1.5em;
     color: #555;
-  }
-  
-  .recipe-item p {
+}
+
+.recipe-item p {
     margin: 5px 0;
     color: #666;
-  }
+}
 
-  .recipe-item button {
+.recipe-item button {
     margin-left: auto;
     padding: 10px 15px;
     background-color: #ff4d4d;
@@ -43,8 +45,8 @@
     cursor: pointer;
     font-size: 0.9em;
     transition: background-color 0.3s ease;
-  }
+}
 
-  .recipe-item button:hover {
+.recipe-item button:hover {
     background-color: #e60000;
-  }
+}
