@@ -2,6 +2,7 @@ import React from "react";
 import recipes from "../data/database.json";
 import { useState } from "react";
 import './RecipeMenu.css';
+import CreateARecipe from "./CreateARecipe";
 
 function RecipeMenu() {
     const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
@@ -13,6 +14,22 @@ function RecipeMenu() {
             return acc;
         }, {})
     );
+
+    const createRecipe = (recipeArr) => {
+        const recipeIds = recipesToDisplay.map((recipe) => recipe.id);
+        const maxId = Math.max(...recipeIds);
+        const nextId = maxId + 1;
+
+        const newRecipe = {
+            ...recipeArr,
+            id: nextId
+        }
+
+        const newList = [newRecipe, ...recipesToDisplay]
+        setRecipesToDisplay(newList);  
+    
+    }
+
 
     // Função para deletar uma receita
     const deleteRecipe = (recipeId) => {
@@ -40,7 +57,7 @@ function RecipeMenu() {
     return (
         <section className="recipe-list" >
 
-        <CreateARecipe/>
+            <CreateARecipe callbackToCreate={createRecipe} />
 
             <h1 className="recipes-title">List of My Recipes</h1>
 
@@ -62,7 +79,7 @@ function RecipeMenu() {
                         </button>
 
                         <button onClick={() => deleteRecipe(recipeDetails.id)}>Delete</button>
-                        
+
                     </div>
                 </div>
             ))}
