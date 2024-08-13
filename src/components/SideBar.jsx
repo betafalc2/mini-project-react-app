@@ -12,10 +12,10 @@ function SideBar(){
           <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/recipe-menu">My Recipe List</NavLink>
+          <NavLink to="/recipes">Recipes</NavLink>
         </li>
         <li>
-          <NavLink to="/create-a-recipe">Create a Recipe</NavLink>
+          <NavLink to="/create-a-recipe">Create</NavLink>
         </li>
       </ul>
         </div>

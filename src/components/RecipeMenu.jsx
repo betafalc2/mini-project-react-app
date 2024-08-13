@@ -59,10 +59,6 @@ function RecipeMenu() {
 
             <CreateARecipe callbackToCreate={createRecipe} />
 
-            <h1 className="recipes-title">List of My Recipes</h1>
-
-            <h2>Recipes: {recipesToDisplay.length}</h2>
-
             {recipesToDisplay.map((recipeDetails) => (
 
                 <div key={recipeDetails.id} className="recipe-item">

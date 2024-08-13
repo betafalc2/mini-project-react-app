@@ -57,6 +57,7 @@ function CreateARecipe(props) {
                         value={name}
                         onChange={(e) => { setName(e.target.value) }}
                     />
+                    <br/>
 
                     Calories
                     <input
@@ -67,6 +68,7 @@ function CreateARecipe(props) {
                         value={calories}
                         onChange={(e) => { setCalories(e.target.value) }}
                     />
+                    <br/>
 
                     Image
                     <input
@@ -75,7 +77,7 @@ function CreateARecipe(props) {
                         onChange={handleFileChange}
                 
                     />
-
+                    <br/>
                     Serving
                     <input
                         type="number"
