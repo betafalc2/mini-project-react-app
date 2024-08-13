@@ -22,17 +22,15 @@ function CreateARecipe(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        props.callbackToCreate(newRecipeAdded);
 
         const newRecipeAdded = {
-            id: nextId,
             name: name,
             calories: calories,
             img: img,
             serving: serving,
         }
 
+        props.callbackToCreate(newRecipeAdded);
 
         setName("");
         setCalories("");
@@ -40,7 +38,6 @@ function CreateARecipe(props) {
         setServing("");
     }
 
-   
 
  
     return (
@@ -81,7 +78,7 @@ function CreateARecipe(props) {
 
                     Serving
                     <input
-                        type="text"
+                        type="number"
                         serving="serving"
                         required
                         placeholder="enter number of serving"

@@ -71,7 +71,7 @@ function RecipeMenu() {
 
                         <h3>Name: {recipeDetails.name}</h3>
                         <p>Calories: {recipeDetails.calories}</p>
-                        <p>Serving: {recipeDetails.servings}</p>
+                        <p>Serving: {recipeDetails.serving}</p>
 
                         <p>Status: {cookedStatus[recipeDetails.id] ? "Cooked" : "Not Cooked"}</p>
                         <button onClick={() => toggleCookedStatus(recipeDetails.id)}>
