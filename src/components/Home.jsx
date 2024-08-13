@@ -1,6 +1,6 @@
 function Home(){
     return(
-        <div className="content">
+        <div className="main-content">
 
         </div>
     )

@@ -1,14 +1,14 @@
 import './Navbar.css';
 
-function NavBar() {
-    return (
-        <nav className="navbar">
-            <div className="logo">
-                <span>Dish Diary</span>
-            </div>
+import './NavBar.css';
 
-        </nav>
-    )
+function NavBar() {
+  return (
+    <nav className="navbar">
+      <div className="navbar-logo">Dish Diary</div> 
+
+    </nav>
+  );
 }
 
 export default NavBar;

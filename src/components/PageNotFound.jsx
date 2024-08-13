@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function PageNotFound(){
     return(
-        <div key={PageNotFound}>
-            <img src="./imgs/pie.png"/>
+        <div key={PageNotFound} className="pagenot-found">
+            <p>Oops, this page doesnt exist!</p>
             <Link to="/">Back</Link>
 
         </div>

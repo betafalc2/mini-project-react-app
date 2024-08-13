@@ -3,7 +3,7 @@ import './About.css'
 
 function About() {
     return (
-        <div className="content">
+        <div className="about">
             <h1>About us</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis, ante nec semper aliquet, nisl enim pulvinar erat, sed semper enim ipsum vitae lectus.
                 Nullam diam nisi, commodo ut porta et, porta ac mi. Quisque commodo tortor sem, a ultricies sem feugiat quis. Phasellus a convallis lacus, sit amet placerat urna.

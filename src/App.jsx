@@ -1,39 +1,37 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import CreateARecipe from './components/CreateARecipe';
+import Footer from './components/Footer';
+import NavBar from './components/NavBar';
+import SideBar from './components/SideBar';
+import RecipeMenu from './components/RecipeMenu';
+import PageNotFound from './components/PageNotFound';
 
-import React from "react";
-import NavBar from './components/Navbar'
-import SideBar from './components/SideBar'
-import Home from './components/Home'
-import About from './components/About'
-import Footer from './components/Footer'
-import RecipeMenu from './components/RecipeMenu'
-import PageNotFound from './components/PageNotFound'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
-import { Route, Routes } from 'react-router-dom';
-
-import './App.css'
-
+import './App.css';
 
 function App() {
- 
-
   return (
-    <>
-      <div>
-      <NavBar />
-      <SideBar />
+    <div className="app-container">
+    <NavBar className="navbar" />
+    <div className="layout-container">
+      <SideBar className="sidebar" />
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/create" element={<CreateARecipe />} />
+          <Route path="/recipes" element={<RecipeMenu />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
       </div>
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/recipe-menu" element={<RecipeMenu />}/>
-        <Route path="/*" element={<PageNotFound/>}/>
-      </Routes>
-
-      <Footer />
-
-    </>
-  )
+    </div>
+    <Footer className="footer" />
+  </div>
+  );
 }
-export default App
+
+export default App;

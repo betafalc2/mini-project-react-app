@@ -1,30 +1,35 @@
-/* Footer.css */
-
-/* Styles for the footer */
 .footer {
-    background-color: #ebb2b2; /* Light gray background */
-    padding: 20px; /* Add padding around the footer */
-    text-align: center; /* Center text alignment */
-    border-top: 1px solid #ddd; /* Light border on top */
+    background-color: white;
+    padding: 20px;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 250px;
 }
 
 .footer-content {
-    max-width: 1200px; /* Max width for content */
-    margin: 0 auto; /* Center content horizontally */
+    color: #000;
+    font-size: 0.9em;
+    text-decoration: none;
 }
 
-/* Styles for the social links */
+.footer-content a:hover {
+    text-decoration: none;
+    color: #555;
+}
+
 .social-links {
-    margin-top: 10px; /* Margin above social links */
+    margin-bottom: 10px;
 }
 
 .social-links a {
-    margin: 0 10px; /* Horizontal spacing between social links */
-    color: #333; /* Dark color for text */
-    text-decoration: none; /* Remove underline from links */
-    font-weight: bold; /* Bold text for links */
+    color: #000;
+    margin-right: 10px;
+    font-size: px;
+    text-decoration: none;
 }
 
 .social-links a:hover {
-    color: #007bff; /* Change color on hover */
+    color: #555;
 }

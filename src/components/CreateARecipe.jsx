@@ -81,7 +81,7 @@ function CreateARecipe(props) {
                         type="number"
                         serving="serving"
                         required
-                        placeholder="enter number of serving"
+                        placeholder="enter number of servings"
                         value={serving}
                         onChange={(e) => { setServing(e.target.value) }}
                     />

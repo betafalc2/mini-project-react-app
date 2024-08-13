@@ -1,21 +1,34 @@
 .sidebar {
-    width: 20vw;
-    height: 20vh;
-    background-color: rgb(233, 143, 25);
-    padding: 1rem;
-    position:relative;
+    width: 250px;
+    height: auto; /* Sidebar height adjusts based on content */
+    background-color: white;
+    padding: 20px;
+    position: fixed;
+    top: 50%; /* Start in the middle of the page */
+    transform: translateY(-50%); /* Center the sidebar vertically */
+    left: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.sidebar ul{
-    list-style: none;
+.sidebar ul {
+    list-style-type: none;
     padding: 0;
 }
 
-.sidebar ul li{
-margin: 1rem 0;
+.sidebar li {
+    margin-bottom: 20px;
 }
 
-.sidebar ul li a{
+.sidebar a {
+    color: #000;
     text-decoration: none;
-    color: aliceblue;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: none;
+    color: #555;
 }

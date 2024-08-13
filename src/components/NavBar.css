@@ -1,17 +1,28 @@
-.navbar{
-    background-color:rgb(124, 222, 190);
-    color: white;
-    padding: 1rem;
+.navbar {
+    background-color: white;
+    height: 10vw;
     display: flex;
     align-items: center;
+    padding: 0 2vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
 }
 
-.logo img{
-    height: 40px;
-    margin-right: 10px;
+.navbar-logo {
+    font-size: 2vw;
+
+    color: #000;
 }
 
-.logo span{
-    font-size: 1.5rem;
-    font-weight: bold;
+@media (min-width: 1200px) {
+    .navbar {
+        height: 12vw;
+    }
+
+    .navbar-logo {
+        font-size: 2vw;
+    }
 }
