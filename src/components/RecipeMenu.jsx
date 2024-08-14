@@ -2,11 +2,14 @@ import React from "react";
 import recipes from "../data/database.json";
 import { useState } from "react";
 import './RecipeMenu.css';
-import CreateARecipe from "./CreateARecipe";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function RecipeMenu() {
     const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
+    const { recipeId } = useParams();
 
+    
     // Estado para controlar o status de cozimento de cada receita
     const [cookedStatus, setCookedStatus] = useState(
         recipes.reduce((acc, recipe) => {
@@ -14,21 +17,6 @@ function RecipeMenu() {
             return acc;
         }, {})
     );
-
-    const createRecipe = (recipeArr) => {
-        const recipeIds = recipesToDisplay.map((recipe) => recipe.id);
-        const maxId = Math.max(...recipeIds);
-        const nextId = maxId + 1;
-
-        const newRecipe = {
-            ...recipeArr,
-            id: nextId
-        }
-
-        const newList = [newRecipe, ...recipesToDisplay]
-        setRecipesToDisplay(newList);  
-    
-    }
 
 
     // Função para deletar uma receita
@@ -57,7 +45,6 @@ function RecipeMenu() {
     return (
         <section className="recipe-list" >
 
-            <CreateARecipe callbackToCreate={createRecipe} />
 
             {recipesToDisplay.map((recipeDetails) => (
 
@@ -71,10 +58,14 @@ function RecipeMenu() {
 
                         <p>Status: {cookedStatus[recipeDetails.id] ? "Cooked" : "Not Cooked"}</p>
                         <button onClick={() => toggleCookedStatus(recipeDetails.id)}>
-                            {cookedStatus[recipeDetails.id] ? "Mark as Not Cooked" : "Mark as Cooked"}
+                            {cookedStatus[recipeDetails.id] ? " Not Cooked" : "Cooked"}
                         </button>
 
                         <button onClick={() => deleteRecipe(recipeDetails.id)}>Delete</button>
+
+                        <Link to={`/recipes/edit/${recipeId}`}>
+                            <button>Edit</button>
+                        </Link>
 
                     </div>
                 </div>

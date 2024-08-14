@@ -5,10 +5,24 @@ function About() {
     return (
         <div className="about">
             <h1>About us</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis, ante nec semper aliquet, nisl enim pulvinar erat, sed semper enim ipsum vitae lectus.
-                Nullam diam nisi, commodo ut porta et, porta ac mi. Quisque commodo tortor sem, a ultricies sem feugiat quis. Phasellus a convallis lacus, sit amet placerat urna.
-                Quisque et ultrices dui, vel eleifend nulla. Aliquam vel felis quis sem luctus gravida ut nec lectus. Phasellus faucibus velit et finibus varius.
-                Morbi ullamcorper porttitor metus, eget finibus mauris scelerisque ac. Vestibulum scelerisque massa bibendum magna blandit ultricies. Quisque non eros sem. 
+            <p>
+                We believe that life should be a delicious adventure, filled with creativity, color, and joy. Our mission is to bring a little bit of fun into everything we do,
+                whether it's through sharing tasty recipes or simply spreading positivity.
+            </p>
+            <p>
+                At our core, we are a community of food lovers, and everyday adventurers who are passionate about making the most out of life.
+                We started this journey with a simple idea: to create a space where everyone can find inspiration, learn something new, and enjoy the simple pleasures of life.
+            </p>
+            <p>
+                Whether you're here to discover a new favorite recipe or just take a break and enjoy the beauty around you, we're glad you've joined us.
+            </p>
+            <p>
+                Thank you for being part of our journey. Let's make every day a little brighter, together.
+            </p>
+            <p>
+                With love and creativity, </p>
+            <p> 
+                    The Trombetta Team
             </p>
         </div>
     )

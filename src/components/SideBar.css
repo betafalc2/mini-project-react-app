@@ -16,6 +16,7 @@
 .sidebar ul {
     list-style-type: none;
     padding: 0;
+    margin-top: -210px
 }
 
 .sidebar li {
@@ -25,7 +26,7 @@
 .sidebar a {
     color: #2e2e2e;
     text-decoration: none;
-    font-size: 1vw;
+    font-size: 16px; /* Adjust base font size */
 }
 
 .sidebar a:hover{
@@ -33,23 +34,44 @@
     color: #555;
 }
 
+/* Larger screens */
 @media (min-width: 1200px) {
     .sidebar a {
-        text-decoration: none;
-        font-size: 1vw;
+        font-size: 18px;
     }
-    .sidebar a:hover{
-        text-decoration: none;
+    .sidebar a:hover {
         color: #555;
     }
 }
 
-@media (max-width: 480px) {
-    .sidebar a {
-        font-size: 1vw;
+/* Medium screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 30vw; /* Increase sidebar width */
+        padding: 15px;
     }
-    .sidebar a:hover{
-        text-decoration: none;
-        color: #555;
+
+    .sidebar a {
+        font-size: 18px; /* Increase font size for better readability */
+    }
+
+    .sidebar li {
+        margin-bottom: 2vw; /* Increase spacing between items */
+    }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 40vw; /* Further increase width on small screens */
+        padding: 4vw;
+    }
+
+    .sidebar a {
+        font-size: 18px; /* Significantly increase font size */
+    }
+
+    .sidebar li {
+        margin-bottom: 3vw; /* Increase spacing for smaller screens */
     }
 }

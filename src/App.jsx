@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import Home from './components/Home';
 import About from './components/About';
 import CreateARecipe from './components/CreateARecipe';
@@ -8,8 +9,7 @@ import NavBar from './components/NavBar';
 import SideBar from './components/SideBar';
 import RecipeMenu from './components/RecipeMenu';
 import PageNotFound from './components/PageNotFound';
-
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import EditRecipePage from './components/EditRecipePage'
 
 import './App.css';
 
@@ -25,6 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/create" element={<CreateARecipe />} />
           <Route path="/recipes" element={<RecipeMenu />} />
+          <Route path="/recipes/edit/:recipeId" element={<EditRecipePage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>

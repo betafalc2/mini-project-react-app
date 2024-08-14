@@ -1,13 +1,16 @@
 import recipes from "../data/database.json";
 import { useState } from "react";
+import './CreateARecipe.css'
 
 function CreateARecipe(props) {
+    const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
+
 
     const [name, setName] = useState("");
     const [calories, setCalories] = useState("");
     const [img, setImg] = useState("");
     const [serving, setServing] = useState("");
-  
+
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -18,8 +21,23 @@ function CreateARecipe(props) {
             reader.readAsDataURL(file); 
         }
     };
-   
 
+    const createRecipe = (recipeArr) => {
+        const recipeIds = recipesToDisplay.map((recipe) => recipe.id);
+        const maxId = Math.max(...recipeIds);
+        const nextId = maxId + 1;
+
+        const newRecipe = {
+            ...recipeArr,
+            id: nextId
+        }
+
+        const newList = [newRecipe, ...recipesToDisplay]
+        setRecipesToDisplay(newList);  
+
+    }
+
+   
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -30,7 +48,7 @@ function CreateARecipe(props) {
             serving: serving,
         }
 
-        props.callbackToCreate(newRecipeAdded);
+        setRecipesToDisplay(newRecipeAdded);
 
         setName("");
         setCalories("");
@@ -38,14 +56,14 @@ function CreateARecipe(props) {
         setServing("");
     }
 
-
  
     return (
 
-        <section>
-            <h2> Create your own recipe</h2>
+        <section className="create-recipe-container">
+            
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="create-recipe-form">
+            <h2> Create your own recipe</h2>
 
                 <label >
                     Name

@@ -15,7 +15,7 @@ function SideBar(){
           <NavLink to="/recipes">Recipes</NavLink>
         </li>
         <li>
-          <NavLink to="/create-a-recipe">Create</NavLink>
+          <NavLink to="/create">Create</NavLink>
         </li>
       </ul>
         </div>
