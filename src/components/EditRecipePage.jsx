@@ -8,22 +8,25 @@ function EditRecipePage() {
     const [name, setName] = useState("");
     const [calories, setCalories] = useState("");
     const [img, setImg] = useState("");
-    const [serving, setServing] = useState("");
+    const [servings, setServings] = useState("");
 
     const { recipeId } = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
-        const recipeToEdit = recipes.find(recipe => recipe.id === parseInt(recipeId));
+        const recipeToEdit = recipes.find((recipe) => {
+        return recipe.id === recipeId;
+        })
         if (recipeToEdit) {
             setName(recipeToEdit.name);
             setCalories(recipeToEdit.calories);
             setImg(recipeToEdit.image);
-            setServing(recipeToEdit.serving);
+            setServings(recipeToEdit.servings);
         }
     }, [recipeId]);
 
     const handleFileChange = (e) => {
+        const file = e.target.files[0]
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
@@ -41,14 +44,15 @@ function EditRecipePage() {
             name: name,
             calories: calories,
             image: img,
-            serving: serving
+            servings: servings
         };
 
         // Atualiza a lista de receitas
-        const updatedRecipes = recipes.map(recipe => recipe.id === updatedRecipes.id ? updatedRecipe : recipe);
+        const updatedRecipes = recipes.map(recipe => recipe.id === updatedRecipe.id ? updatedRecipe : recipe);
+        console.log(recipe)
 
         // Redireciona o usuario apos salvar as alteracoes
-        navigate(`/recipes/${recipeId}`);
+        navigate('/recipes/');
 
     };
 
@@ -99,9 +103,9 @@ function EditRecipePage() {
                     Servings
                     <input
                         type="number"
-                        name="serving"
-                        value={serving}
-                        onChange={(e) => setServing(e.target.value)}
+                        name="servings"
+                        value={servings}
+                        onChange={(e) => setServings(e.target.value)}
                         required
                     />
                 </label>

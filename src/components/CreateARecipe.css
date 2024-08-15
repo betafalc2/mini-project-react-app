@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 65vh;
-    background-color: #ffffff; /* Light gray background */
+    background-color: #ffffff; 
     padding: 20px;
     box-sizing: border-box;
     margin-top: 190px;
@@ -22,7 +22,7 @@
 }
 
 .create-recipe-form h2 {
-    color: #3f3f3f; /* Black color for heading */
+    color: #3f3f3f; 
     text-align: center;
     margin-bottom: 20px;
     width: 100%;
@@ -52,11 +52,11 @@
 
 .create-recipe-form input[type="text"]::placeholder,
 .create-recipe-form input[type="number"]::placeholder {
-    color: #999999; /* Light gray for placeholder text */
+    color: #999999; 
 }
 
 .create-recipe-form button {
-    background-color: #918e8e; /* Black background for button */
+    background-color: #918e8e; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -68,5 +68,5 @@
 }
 
 .create-recipe-form button:hover {
-    background-color: #555; /* Dark gray on hover */
+    background-color: #555;
 }

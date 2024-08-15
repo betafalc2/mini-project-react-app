@@ -3,13 +3,12 @@ import recipes from "../data/database.json";
 import { useState } from "react";
 import './RecipeMenu.css';
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
-function RecipeMenu() {
+
+function RecipeMenu(props) {
     const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
-    const { recipeId } = useParams();
 
-    
+
     // Estado para controlar o status de cozimento de cada receita
     const [cookedStatus, setCookedStatus] = useState(
         recipes.reduce((acc, recipe) => {
@@ -45,16 +44,16 @@ function RecipeMenu() {
     return (
         <section className="recipe-list" >
 
-
-            {recipesToDisplay.map((recipeDetails) => (
-
-                <div key={recipeDetails.id} className="recipe-item">
+            {props.recipesArr.map((recipeDetails) => {
+                
+                return(
+                    <div key={recipeDetails.id} className="recipe-item">
                     <img src={recipeDetails.image} alt={recipeDetails.name} />
                     <div>
 
                         <h3>{recipeDetails.name}</h3>
                         <p>Calories: {recipeDetails.calories}</p>
-                        <p>Servings: {recipeDetails.serving}</p>
+                        <p>Servings: {recipeDetails.servings}</p>
 
                         <button onClick={() => toggleCookedStatus(recipeDetails.id)}>
                             {cookedStatus[recipeDetails.id] ? " Not Cooked" : "Cooked"}
@@ -62,12 +61,14 @@ function RecipeMenu() {
 
                         <button onClick={() => deleteRecipe(recipeDetails.id)}>Delete</button>
 
-                        <Link to={`/recipes/edit/${recipeId}`}>
-                            <button>Edit</button></Link>
+                        <Link to={`/recipes/edit/${recipeDetails.id}`}>
+                            <button>Edit</button>
+                        </Link>
 
                     </div>
                 </div>
-            ))}
+                )
+            })}
         </section>
     );
 

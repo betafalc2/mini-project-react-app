@@ -1,15 +1,13 @@
-import recipes from "../data/database.json";
+
 import { useState } from "react";
 import './CreateARecipe.css'
 
 function CreateARecipe(props) {
-    const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
-
-
+    
     const [name, setName] = useState("");
     const [calories, setCalories] = useState("");
     const [img, setImg] = useState("");
-    const [serving, setServing] = useState("");
+    const [servings, setServings] = useState("");
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
@@ -22,21 +20,6 @@ function CreateARecipe(props) {
         }
     };
 
-    const createRecipe = (recipeArr) => {
-        const recipeIds = recipesToDisplay.map((recipe) => recipe.id);
-        const maxId = Math.max(...recipeIds);
-        const nextId = maxId + 1;
-
-        const newRecipe = {
-            ...recipeArr,
-            id: nextId
-        }
-
-        const newList = [newRecipe, ...recipesToDisplay]
-        setRecipesToDisplay(newList);  
-
-    }
-
    
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,15 +28,15 @@ function CreateARecipe(props) {
             name: name,
             calories: calories,
             img: img,
-            serving: serving,
+            servings: servings,
         }
 
-        setRecipesToDisplay(newRecipeAdded);
+        props.callbackToCreate(newRecipeAdded);
 
         setName("");
         setCalories("");
         setImg("");
-        setServing("");
+        setServings("");
     }
 
  
@@ -102,8 +85,8 @@ function CreateARecipe(props) {
                         serving="serving"
                         required
                         placeholder="enter number of servings"
-                        value={serving}
-                        onChange={(e) => { setServing(e.target.value) }}
+                        value={servings}
+                        onChange={(e) => { setServings(e.target.value) }}
                     />
 
                 </label>
