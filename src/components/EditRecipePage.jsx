@@ -4,7 +4,7 @@ import recipes from "../data/database.json";
 import './EditRecipePage.css'
 
 
-function EditRecipePage(props) {
+function EditRecipePage({ recipesArr, callbackToUpdate }) {
     const [name, setName] = useState("");
     const [calories, setCalories] = useState("");
     const [img, setImg] = useState("");
@@ -14,7 +14,7 @@ function EditRecipePage(props) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const recipeToEdit = props.recipesArr.find((recipe) => {
+        const recipeToEdit = recipesArr.find((recipe) => {
             return recipe.id === recipeId;
         })
 
@@ -25,8 +25,7 @@ function EditRecipePage(props) {
             setServings(recipeToEdit.servings);
         }
 
-    }, [recipeId]);
-
+    }, [recipeId, recipesArr]);
 
     const handleFileChange = (e) => {
         const file = e.target.files[0]
@@ -49,15 +48,13 @@ function EditRecipePage(props) {
             image: img,
             servings: servings
         };
+        console.log("Updated Recipe:", updatedRecipe);
 
-        // Atualiza a lista de receitas
-        const updatedRecipes = recipes.map(recipe => recipe.id === updatedRecipe.id ? updatedRecipe : recipe);
+        callbackToUpdate(updatedRecipe);
 
-        // Redireciona o usuario apos salvar as alteracoes
         navigate('/recipes/');
 
     };
-
 
     return (
         <div className="edit-recipe-container">

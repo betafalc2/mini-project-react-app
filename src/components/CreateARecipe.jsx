@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './CreateARecipe.css'
 
 function CreateARecipe(props) {
@@ -8,6 +9,8 @@ function CreateARecipe(props) {
     const [calories, setCalories] = useState("");
     const [img, setImg] = useState("");
     const [servings, setServings] = useState("");
+
+    const navigate = useNavigate()
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
@@ -20,7 +23,6 @@ function CreateARecipe(props) {
         }
     };
 
-   
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -37,9 +39,10 @@ function CreateARecipe(props) {
         setCalories("");
         setImg("");
         setServings("");
+
+        navigate('/recipes/');
     }
 
- 
     return (
 
         <section className="create-recipe-container">
@@ -82,7 +85,7 @@ function CreateARecipe(props) {
                     Servings
                     <input
                         type="number"
-                        serving="serving"
+                        servings="servings"
                         required
                         placeholder="enter number of servings"
                         value={servings}

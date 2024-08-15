@@ -1,23 +1,23 @@
 
 
 .recipe-list {
-    column-count: 3; /* Creates three columns for the items */
-    column-gap: 20px; /* Space between the columns */
+    column-count: 3; 
+    column-gap: 20px; 
     padding: 20px;
     background-color: #fff;
     margin-top: 180px;
 }
 
 .recipe-item {
-    break-inside: avoid; /* Prevents items from breaking across columns */
+    break-inside: avoid; 
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    margin-bottom: 20px; /* Space between items */
+    margin-bottom: 20px; 
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
-    overflow: hidden; /* Prevents content overflow */
+    overflow: hidden; 
 }
 
 .recipe-item img {
@@ -25,7 +25,7 @@
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
-    object-fit: cover; /* Images maintain aspect ratio and fill the space */
+    object-fit: cover; 
 }
 
 .recipe-item h3, .recipe-item p {

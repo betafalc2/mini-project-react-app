@@ -30,16 +30,23 @@ function App() {
 
     const newList = [newRecipe, ...recipesToDisplay]
     setRecipesToDisplay(newList);
+    console.log(newList);
   }
 
-  // Função para deletar uma receita
+  const updateRecipe = (updatedRecipe) => {
+    const updatedRecipes = recipesToDisplay.map(recipe =>
+        recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+    );
+    console.log("Updated Recipes List:", updatedRecipes);
+    setRecipesToDisplay([...updatedRecipes]);
+};
+
   const deleteRecipe = (recipeId) => {
     const newRecipeList = recipesToDisplay.filter((element) => {
       return recipeId !== element.id;
     });
     setRecipesToDisplay(newRecipeList);
-
-
+    
   };
 
 
@@ -54,7 +61,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/create" element={<CreateARecipe callbackToCreate={createRecipe} />} />
             <Route path="/recipes" element={<RecipeMenu recipesArr={recipesToDisplay} callbackToDelete={deleteRecipe}/>} />
-            <Route path="/recipes/edit/:recipeId" element={<EditRecipePage recipesArr={recipesToDisplay}/>} />
+            <Route path="/recipes/edit/:recipeId" element={<EditRecipePage recipesArr={recipesToDisplay} callbackToUpdate={updateRecipe}/>} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>

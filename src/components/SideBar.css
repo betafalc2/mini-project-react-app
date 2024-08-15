@@ -25,7 +25,7 @@
 .sidebar a {
     color: #2e2e2e;
     text-decoration: none;
-    font-size: 16px; /* Base font size */
+    font-size: 16px;
 }
 
 .sidebar a:hover{
@@ -36,7 +36,7 @@
 /* Larger screens */
 @media (min-width: 1200px) {
     .sidebar a {
-        font-size: 18px; /* Slightly larger font size for bigger screens */
+        font-size: 18px; 
     }
 }
 
@@ -48,7 +48,7 @@
     }
 
     .sidebar a {
-        font-size: 15px; /* Adjust font size for medium screens */
+        font-size: 15px; 
     }
 }
 
@@ -60,6 +60,6 @@
     }
 
     .sidebar a {
-        font-size: 14px; /* Slightly smaller font size for small screens */
+        font-size: 14px; 
     }
 }
