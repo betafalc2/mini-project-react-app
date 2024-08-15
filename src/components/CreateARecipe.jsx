@@ -93,10 +93,10 @@ function CreateARecipe(props) {
                         type="file"
                         accept="image/*"
                         onChange={handleFileChange}
-                
                     />
                     <br/>
-                    Serving
+
+                    Servings
                     <input
                         type="number"
                         serving="serving"
@@ -107,7 +107,6 @@ function CreateARecipe(props) {
                     />
 
                 </label>
-
                 <p>
                     <button>Create</button>
                 </p>

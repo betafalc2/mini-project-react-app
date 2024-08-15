@@ -1,0 +1,14 @@
+.main-content img {
+    max-width: 70%; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    margin-top: 180px;
+}
+
+@media (max-width: 768px) {
+    .main-content img {
+        max-width: 85%;
+    }
+}

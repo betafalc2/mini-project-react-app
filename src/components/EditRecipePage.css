@@ -1,0 +1,90 @@
+.edit-recipe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65vh; /* Matching the CreateRecipePage */
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 190px;
+}
+
+.edit-recipe-form {
+    background-color: white;
+    padding: 20px; /* Matching the CreateRecipePage */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-recipe-form h2 {
+    color: #3f3f3f; 
+    text-align: center;
+    margin-bottom: 20px; 
+    width: 100%;
+}
+
+.edit-recipe-form label {
+    margin-bottom: 15px; 
+    font-size: 1em;
+    color: #333333;
+    width: 100%;
+}
+
+.edit-recipe-form input[type="text"],
+.edit-recipe-form input[type="number"],
+.edit-recipe-form input[type="file"] {
+    width: 100%;
+    padding: 10px; 
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-bottom: 15px; /
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.edit-recipe-form input[type="text"]::placeholder,
+.edit-recipe-form input[type="number"]::placeholder {
+    color: #999999; /* Matching the CreateRecipePage */
+}
+
+.edit-recipe-form button {
+    background-color: #918e8e; /* Matching the CreateRecipePage */
+    color: white;
+    padding: 10px 20px; /* Matching the CreateRecipePage */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 10px; /* Matching the CreateRecipePage */
+    
+}
+
+.edit-recipe-form button:hover {
+    background-color: #555; /* Matching the CreateRecipePage */
+}
+
+.delete-recipe-button {
+    background-color: #918e8e; /* Same background color as the submit button */
+    color: white;
+    padding: 10px 20px; /* Matching the padding of the submit button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 10px; /* Matching the margin-top of the submit button */
+    
+}
+
+.delete-recipe-button:hover {
+    background-color: #555; /* Matching the hover effect of the submit button */
+}

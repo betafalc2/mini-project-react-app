@@ -6,8 +6,8 @@ function About() {
         <div className="about">
             <h1>About us</h1>
             <p>
-                We believe that life should be a delicious adventure, filled with creativity, color, and joy. Our mission is to bring a little bit of fun into everything we do,
-                whether it's through sharing tasty recipes or simply spreading positivity.
+                We believe that life should be a delicious adventure, filled with creativity, color, and joy. 
+                Our mission is to bring a little bit of fun into everything we do, whether it's through sharing tasty recipes or simply spreading positivity.
             </p>
             <p>
                 At our core, we are a community of food lovers, and everyday adventurers who are passionate about making the most out of life.

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import recipes from "../data/database.json";
+import './EditRecipePage.css'
 
 
 function EditRecipePage() {
@@ -60,12 +61,13 @@ function EditRecipePage() {
     }
 
     return (
-        <div className="EditRecipePage">
-            <h3> Edit the Recipe</h3>
+        <div className="edit-recipe-container">
 
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={handleFormSubmit} className="edit-recipe-form">
+                <h2> Edit your Recipe</h2>
+
                 <label>
-                    Name:
+                    Name
                     <input
                         type="text"
                         name="name"
@@ -73,11 +75,9 @@ function EditRecipePage() {
                         onChange={(e) => setName(e.target.value)}
                         required
                     />
-                </label>
-                <br />
+                    <br />
 
-                <label>
-                    Calories:
+                    Calories
                     <input
                         type="number"
                         name="calories"
@@ -85,21 +85,18 @@ function EditRecipePage() {
                         onChange={(e) => setCalories(e.target.value)}
                         required
                     />
-                </label>
-                <br />
 
-                <label>
-                    Image:
+                    <br />
+
+                    Image
                     <input
                         type="file"
                         accept="image/*"
                         onChange={handleFileChange}
                     />
-                </label>
-                <br />
+                    <br />
 
-                <label>
-                    Serving:
+                    Servings
                     <input
                         type="number"
                         name="serving"
@@ -108,12 +105,12 @@ function EditRecipePage() {
                         required
                     />
                 </label>
-                <br />
 
                 <button type="submit">Update Recipe</button>
+                <button onClick={deleteRecipe} className="delete-recipe-button">Delete Recipe</button>
 
             </form>
-            <button onClick={deleteRecipe}>Delete Recipe</button>
+
 
         </div>
     )

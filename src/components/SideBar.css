@@ -1,9 +1,9 @@
 .sidebar {
     width: 20vw;
-    max-width: 250px;
+    max-width: 200px;
     height: auto;
     background-color: white;
-    padding: 2vw;
+    padding: 20px;
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
@@ -16,17 +16,16 @@
 .sidebar ul {
     list-style-type: none;
     padding: 0;
-    margin-top: -210px
 }
 
 .sidebar li {
-    margin-bottom: 1vw;
+    margin-bottom: 10px;
 }
 
 .sidebar a {
     color: #2e2e2e;
     text-decoration: none;
-    font-size: 16px; /* Adjust base font size */
+    font-size: 16px; /* Base font size */
 }
 
 .sidebar a:hover{
@@ -37,41 +36,30 @@
 /* Larger screens */
 @media (min-width: 1200px) {
     .sidebar a {
-        font-size: 18px;
-    }
-    .sidebar a:hover {
-        color: #555;
+        font-size: 18px; /* Slightly larger font size for bigger screens */
     }
 }
 
 /* Medium screens */
 @media (max-width: 768px) {
     .sidebar {
-        width: 30vw; /* Increase sidebar width */
-        padding: 15px;
+        width: 25vw;
+        padding: 20px;
     }
 
     .sidebar a {
-        font-size: 18px; /* Increase font size for better readability */
-    }
-
-    .sidebar li {
-        margin-bottom: 2vw; /* Increase spacing between items */
+        font-size: 15px; /* Adjust font size for medium screens */
     }
 }
 
 /* Small screens */
 @media (max-width: 480px) {
     .sidebar {
-        width: 40vw; /* Further increase width on small screens */
-        padding: 4vw;
+        width: 30vw;
+        padding: 20px;
     }
 
     .sidebar a {
-        font-size: 18px; /* Significantly increase font size */
-    }
-
-    .sidebar li {
-        margin-bottom: 3vw; /* Increase spacing for smaller screens */
+        font-size: 14px; /* Slightly smaller font size for small screens */
     }
 }

@@ -4,10 +4,10 @@
     padding: 2vw;
     background-color: #fff;
     color: #2e2e2e;
-    line-height: 1.8;
+    line-height: 1.2;
     position: relative;
     z-index: 1;
-    padding-top: 15vw; /* Add enough padding at the top to clear the navbar */
+    padding-top: 180px; 
 }
 
 .about h1 {

@@ -52,11 +52,10 @@ function RecipeMenu() {
                     <img src={recipeDetails.image} alt={recipeDetails.name} />
                     <div>
 
-                        <h3>Name: {recipeDetails.name}</h3>
+                        <h3>{recipeDetails.name}</h3>
                         <p>Calories: {recipeDetails.calories}</p>
-                        <p>Serving: {recipeDetails.serving}</p>
+                        <p>Servings: {recipeDetails.serving}</p>
 
-                        <p>Status: {cookedStatus[recipeDetails.id] ? "Cooked" : "Not Cooked"}</p>
                         <button onClick={() => toggleCookedStatus(recipeDetails.id)}>
                             {cookedStatus[recipeDetails.id] ? " Not Cooked" : "Cooked"}
                         </button>
@@ -64,8 +63,7 @@ function RecipeMenu() {
                         <button onClick={() => deleteRecipe(recipeDetails.id)}>Delete</button>
 
                         <Link to={`/recipes/edit/${recipeId}`}>
-                            <button>Edit</button>
-                        </Link>
+                            <button>Edit</button></Link>
 
                     </div>
                 </div>

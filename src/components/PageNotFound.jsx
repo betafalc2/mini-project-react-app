@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 function PageNotFound(){
     return(
         <div key={PageNotFound} className="pagenot-found">
-            <p>Oops, this page doesnt exist!</p>
-            <Link to="/">Back</Link>
+            <p>
+                <img src="src\imgs\404.png" alt="404"/>
+            </p>
+            <Link to="/" className="back-button">
+                <button>Back</button>
+            </Link>
 
         </div>
     )
