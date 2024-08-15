@@ -6,40 +6,10 @@ import { Link } from "react-router-dom";
 
 
 function RecipeMenu(props) {
-    const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
-
+    
 
     // Estado para controlar o status de cozimento de cada receita
-    const [cookedStatus, setCookedStatus] = useState(
-        recipes.reduce((acc, recipe) => {
-            acc[recipe.id] = false; // Inicializa todas como "Not Cooked"
-            return acc;
-        }, {})
-    );
 
-
-    // Função para deletar uma receita
-    const deleteRecipe = (recipeId) => {
-        const newRecipeList = recipesToDisplay.filter((element) => {
-            return recipeId !== element.id;
-        });
-        setRecipesToDisplay(newRecipeList);
-
-        // Também remover o status de cozimento ao deletar
-        setCookedStatus((prevState) => {
-            const newState = { ...prevState };
-            delete newState[recipeId];
-            return newState;
-        });
-    };
-
-    // Função para alternar o status de cozimento
-    const toggleCookedStatus = (recipeId) => {
-        setCookedStatus((prevState) => ({
-            ...prevState,
-            [recipeId]: !prevState[recipeId],
-        }));
-    };
 
     return (
         <section className="recipe-list" >
@@ -55,11 +25,7 @@ function RecipeMenu(props) {
                         <p>Calories: {recipeDetails.calories}</p>
                         <p>Servings: {recipeDetails.servings}</p>
 
-                        <button onClick={() => toggleCookedStatus(recipeDetails.id)}>
-                            {cookedStatus[recipeDetails.id] ? " Not Cooked" : "Cooked"}
-                        </button>
-
-                        <button onClick={() => deleteRecipe(recipeDetails.id)}>Delete</button>
+                        <button onClick={props.callbackToDelete}>Delete</button>
 
                         <Link to={`/recipes/edit/${recipeDetails.id}`}>
                             <button>Edit</button>

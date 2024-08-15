@@ -21,38 +21,46 @@ function App() {
   const createRecipe = (recipeArr) => {
     const recipeIds = recipesToDisplay.map((recipe) => recipe.id);
     const maxId = Math.max(...recipeIds);
-    const nextId = maxId + 1;
+    const nextId = String(maxId + 1);
 
     const newRecipe = {
-        ...recipeArr,
-        id: nextId
+      ...recipeArr,
+      id: nextId
     }
 
     const newList = [newRecipe, ...recipesToDisplay]
-    setRecipesToDisplay(newList);  
+    setRecipesToDisplay(newList);
+  }
 
-    console.log ("receita criada!")
+  // Função para deletar uma receita
+  const deleteRecipe = (recipeId) => {
+    const newRecipeList = recipesToDisplay.filter((element) => {
+      return recipeId !== element.id;
+    });
+    setRecipesToDisplay(newRecipeList);
 
-}
+
+  };
+
 
   return (
     <div className="app-container">
-    <NavBar className="navbar" />
-    <div className="layout-container">
-      <SideBar className="sidebar" />
-      <div className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/create" element={<CreateARecipe callbackToCreate={createRecipe}/>} />
-          <Route path="/recipes" element={<RecipeMenu recipesArr={recipesToDisplay}/>} />
-          <Route path="/recipes/edit/:recipeId" element={<EditRecipePage />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
+      <NavBar className="navbar" />
+      <div className="layout-container">
+        <SideBar className="sidebar" />
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/create" element={<CreateARecipe callbackToCreate={createRecipe} />} />
+            <Route path="/recipes" element={<RecipeMenu recipesArr={recipesToDisplay} callbackToDelete={deleteRecipe}/>} />
+            <Route path="/recipes/edit/:recipeId" element={<EditRecipePage recipesArr={recipesToDisplay}/>} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div>
       </div>
+      <Footer className="footer" />
     </div>
-    <Footer className="footer" />
-  </div>
   );
 }
 

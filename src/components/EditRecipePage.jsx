@@ -4,7 +4,7 @@ import recipes from "../data/database.json";
 import './EditRecipePage.css'
 
 
-function EditRecipePage() {
+function EditRecipePage(props) {
     const [name, setName] = useState("");
     const [calories, setCalories] = useState("");
     const [img, setImg] = useState("");
@@ -14,16 +14,19 @@ function EditRecipePage() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const recipeToEdit = recipes.find((recipe) => {
-        return recipe.id === recipeId;
+        const recipeToEdit = props.recipesArr.find((recipe) => {
+            return recipe.id === recipeId;
         })
+
         if (recipeToEdit) {
             setName(recipeToEdit.name);
             setCalories(recipeToEdit.calories);
             setImg(recipeToEdit.image);
             setServings(recipeToEdit.servings);
         }
+
     }, [recipeId]);
+
 
     const handleFileChange = (e) => {
         const file = e.target.files[0]
@@ -49,20 +52,12 @@ function EditRecipePage() {
 
         // Atualiza a lista de receitas
         const updatedRecipes = recipes.map(recipe => recipe.id === updatedRecipe.id ? updatedRecipe : recipe);
-        console.log(recipe)
 
         // Redireciona o usuario apos salvar as alteracoes
         navigate('/recipes/');
 
     };
 
-
-    const deleteRecipe = () => {
-        const updatedRecipes = recipes.filter(recipe => recipe.id !== parseInt(recipeId));
-
-        // Redireciona apos deletar
-        navigate("/recipes");
-    }
 
     return (
         <div className="edit-recipe-container">
@@ -111,7 +106,6 @@ function EditRecipePage() {
                 </label>
 
                 <button type="submit">Update Recipe</button>
-                <button onClick={deleteRecipe} className="delete-recipe-button">Delete Recipe</button>
 
             </form>
 
