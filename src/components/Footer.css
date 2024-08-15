@@ -2,7 +2,7 @@
     background-color: white;
     padding: 20px;
     text-align: left;
-    position: relative;
+    position: fixed;
     width: 160px; 
     bottom: 0;
     left: 0;
